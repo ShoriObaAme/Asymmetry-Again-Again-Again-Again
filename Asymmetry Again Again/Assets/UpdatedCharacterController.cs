@@ -48,6 +48,15 @@ public class UpdatedCharacterController : MonoBehaviour
     [Header("Knockback / Health")]
     public int Lives;
 
+    [Header("Shield")]
+    [Tooltip("The shield gameobject")]
+    public GameObject shield;
+    [Tooltip("The shield Icon")]
+    public GameObject shieldIcon;
+    [Tooltip("Is the shield active?")]
+    public bool isShieldActive;
+    
+
     [Header("Debugging")]
     [Tooltip("What is the color of the Ground Check Wire Sphere?")]
     public Color WiresphereColor;
@@ -82,6 +91,23 @@ public class UpdatedCharacterController : MonoBehaviour
         CheckYVelocity();
 		PlayerMovement();
         LookAtMouse();
+	}
+
+    public void Shield()
+	{
+        if (isShieldActive)
+		{
+            isShieldActive = false;
+            shield.SetActive(false);
+            shieldIcon.SetActive(false);
+		}
+        else
+		{
+            isShieldActive = true;
+            shield.SetActive(true);
+            shieldIcon.SetActive(true);
+		}
+        return;
 	}
 
 	private void OnJump()
