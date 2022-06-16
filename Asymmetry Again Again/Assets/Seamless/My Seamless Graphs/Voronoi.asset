@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1678850157, guid: ede9f12173208bc41b05f96939f0c882, type: 3}
+  m_Name: Voronoi
+  m_EditorClassIdentifier: 
+  data: 'SeamlessGraph
+
+    Links:
+
+'
+  textureSize: {x: 1024, y: 1024}

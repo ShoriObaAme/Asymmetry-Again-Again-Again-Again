@@ -1,0 +1,216 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1678850157, guid: ede9f12173208bc41b05f96939f0c882, type: 3}
+  m_Name: SnowFlake
+  m_EditorClassIdentifier: 
+  data: 'SeamlessGraph
+
+    RoundedRect;{"name":"RoundedRect","position":{"x":-579.7465209960938,"y":528.1593627929688},"size":{"x":202.0,"y":284.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[],"outputs":[{"name":"Output","tex":{"instanceID":-37756}}],"parameters":[{"name":"Margins","value":{"x":0.6909999847412109,"y":0.2750000059604645,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false},{"name":"Falloff","value":{"x":0.08219999819993973,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true},{"name":"Radius","value":{"x":0.3707999885082245,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true}],"cs":{"instanceID":3710},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":94}
+
+    TilingOffset;{"name":"TilingOffset","position":{"x":396.63330078125,"y":719.9965209960938},"size":{"x":202.0,"y":262.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-37834}}],"outputs":[{"name":"Output","tex":{"instanceID":-37760}}],"parameters":[{"name":"Offset","value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false},{"name":"Tiling","value":{"x":20.0,"y":1.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false}],"cs":{"instanceID":3690},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":72}
+
+    Barrel;{"name":"Barrel","position":{"x":789.1597900390625,"y":676.3369140625},"size":{"x":202.0,"y":222.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-37776}}],"outputs":[{"name":"Output","tex":{"instanceID":-37764}}],"parameters":[{"name":"Power","value":{"x":0.6617000102996826,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":false}],"cs":{"instanceID":15416},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":32}
+
+    Add;{"name":"Add","position":{"x":1177.4354248046875,"y":951.7410278320313},"size":{"x":202.0,"y":190.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"A","linkedTex":{"instanceID":-37764}},{"name":"B","linkedTex":{"instanceID":-37772}}],"outputs":[{"name":"Output","tex":{"instanceID":-37768}}],"parameters":[],"cs":{"instanceID":3726},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":0}
+
+    Rotate;{"name":"Rotate","position":{"x":846.4959106445313,"y":1103.97314453125},"size":{"x":202.0,"y":222.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-37764}}],"outputs":[{"name":"Output","tex":{"instanceID":-37772}}],"parameters":[{"name":"Angle","value":{"x":90.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":-180.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":180.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true}],"cs":{"instanceID":3738},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":32}
+
+    Multiply;{"name":"Multiply","position":{"x":576.7728881835938,"y":938.4769897460938},"size":{"x":202.0,"y":222.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"A","linkedTex":{"instanceID":-37760}},{"name":"B","linkedTex":{"instanceID":-37780}}],"outputs":[{"name":"Output","tex":{"instanceID":-37776}}],"parameters":[{"name":"Multiplier","value":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":false}],"cs":{"instanceID":3694},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":32}
+
+    Polygon;{"name":"Polygon","position":{"x":242.1425323486328,"y":1066.794189453125},"size":{"x":202.0,"y":284.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[],"outputs":[{"name":"Output","tex":{"instanceID":-37780}}],"parameters":[{"name":"Sides","value":{"x":4.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":3.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":32.0,"y":0.0,"z":0.0,"w":0.0},"type":0,"hasMinMax":true},{"name":"Falloff","value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true},{"name":"Scale","value":{"x":2.5369999408721926,"y":4.604000091552734,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false}],"cs":{"instanceID":3718},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":94}
+
+    Rotate;{"name":"Rotate","position":{"x":1168.6336669921875,"y":1168.3267822265625},"size":{"x":202.0,"y":222.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-37768}}],"outputs":[{"name":"Output","tex":{"instanceID":-37784}}],"parameters":[{"name":"Angle","value":{"x":45.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":-180.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":180.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true}],"cs":{"instanceID":3738},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":32}
+
+    Add;{"name":"Add","position":{"x":1554.2120361328125,"y":1059.422607421875},"size":{"x":202.0,"y":190.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"A","linkedTex":{"instanceID":-37768}},{"name":"B","linkedTex":{"instanceID":-37784}}],"outputs":[{"name":"Output","tex":{"instanceID":-37788}}],"parameters":[],"cs":{"instanceID":3726},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":0}
+
+    Polygon;{"name":"Polygon","position":{"x":-981.3916625976563,"y":844.3856201171875},"size":{"x":202.0,"y":284.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[],"outputs":[{"name":"Output","tex":{"instanceID":-37792}}],"parameters":[{"name":"Sides","value":{"x":32.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":3.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":32.0,"y":0.0,"z":0.0,"w":0.0},"type":0,"hasMinMax":true},{"name":"Falloff","value":{"x":0.1096000000834465,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true},{"name":"Scale","value":{"x":4.270999908447266,"y":0.628000020980835,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false}],"cs":{"instanceID":3718},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":94}
+
+    TilingOffset;{"name":"TilingOffset","position":{"x":-583.6500244140625,"y":860.1669311523438},"size":{"x":202.0,"y":262.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-37838}}],"outputs":[{"name":"Output","tex":{"instanceID":-37796}}],"parameters":[{"name":"Offset","value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false},{"name":"Tiling","value":{"x":1.0,"y":3.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false}],"cs":{"instanceID":3690},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":72}
+
+    Add;{"name":"Add","position":{"x":-120.37332153320313,"y":659.8750610351563},"size":{"x":202.0,"y":190.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"A","linkedTex":{"instanceID":-37756}},{"name":"B","linkedTex":{"instanceID":-37804}}],"outputs":[{"name":"Output","tex":{"instanceID":-37800}}],"parameters":[],"cs":{"instanceID":3726},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":0}
+
+    Multiply;{"name":"Multiply","position":{"x":-366.28790283203127,"y":1133.69482421875},"size":{"x":202.0,"y":222.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"A","linkedTex":{"instanceID":-37796}},{"name":"B","linkedTex":{"instanceID":-37808}}],"outputs":[{"name":"Output","tex":{"instanceID":-37804}}],"parameters":[{"name":"Multiplier","value":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":false}],"cs":{"instanceID":3694},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":32}
+
+    Polygon;{"name":"Polygon","position":{"x":-732.9335327148438,"y":1212.9888916015625},"size":{"x":202.0,"y":284.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[],"outputs":[{"name":"Output","tex":{"instanceID":-37808}}],"parameters":[{"name":"Sides","value":{"x":4.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":3.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":32.0,"y":0.0,"z":0.0,"w":0.0},"type":0,"hasMinMax":true},{"name":"Falloff","value":{"x":0.1712000072002411,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true},{"name":"Scale","value":{"x":4.170000076293945,"y":4.119999885559082,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false}],"cs":{"instanceID":3718},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":94}
+
+    Multiply;{"name":"Multiply","position":{"x":1870.953125,"y":1248.0504150390625},"size":{"x":202.0,"y":222.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"A","linkedTex":{"instanceID":-37788}},{"name":"B","linkedTex":{"instanceID":-37816}}],"outputs":[{"name":"Output","tex":{"instanceID":-37812}}],"parameters":[{"name":"Multiplier","value":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":false}],"cs":{"instanceID":3694},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":32}
+
+    RoundedRect;{"name":"RoundedRect","position":{"x":1352.822509765625,"y":1477.3675537109375},"size":{"x":202.0,"y":284.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[],"outputs":[{"name":"Output","tex":{"instanceID":-37816}}],"parameters":[{"name":"Margins","value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false},{"name":"Falloff","value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true},{"name":"Radius","value":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true}],"cs":{"instanceID":3710},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":94}
+
+    Export;{"name":"Export","position":{"x":2383.5908203125,"y":1328.3995361328125},"size":{"x":400.0,"y":58.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-37822}}],"outputs":[],"parameters":[],"cs":{"instanceID":0},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":0,"path":"Assets/Seamless/Export/SnowFlake.png"}
+
+    Merge;{"name":"Merge","position":{"x":2141.8603515625,"y":1260.215576171875},"size":{"x":202.0,"y":190.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"R","linkedTex":{"instanceID":-37812}},{"name":"G","linkedTex":{"instanceID":-37812}},{"name":"B","linkedTex":{"instanceID":-37812}},{"name":"A","linkedTex":{"instanceID":-37812}}],"outputs":[{"name":"Output","tex":{"instanceID":-37822}}],"parameters":[],"cs":{"instanceID":3724},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":0}
+
+    Polygon;{"name":"Polygon","position":{"x":-73.2722396850586,"y":1213.08349609375},"size":{"x":202.0,"y":284.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[],"outputs":[{"name":"Output","tex":{"instanceID":-37826}}],"parameters":[{"name":"Sides","value":{"x":6.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":3.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":32.0,"y":0.0,"z":0.0,"w":0.0},"type":0,"hasMinMax":true},{"name":"Falloff","value":{"x":0.18400000035762788,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true},{"name":"Scale","value":{"x":0.0,"y":3.006999969482422,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false}],"cs":{"instanceID":3718},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":94}
+
+    OneMinus;{"name":"OneMinus","position":{"x":-29.525218963623048,"y":1062.1561279296875},"size":{"x":202.0,"y":40.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":false,"inputs":[{"name":"Input","linkedTex":{"instanceID":-37826}}],"outputs":[{"name":"Output","tex":{"instanceID":-37830}}],"parameters":[],"cs":{"instanceID":3740},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":0}
+
+    Multiply;{"name":"Multiply","position":{"x":156.65939331054688,"y":693.2081909179688},"size":{"x":202.0,"y":222.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"A","linkedTex":{"instanceID":-37800}},{"name":"B","linkedTex":{"instanceID":-37830}}],"outputs":[{"name":"Output","tex":{"instanceID":-37834}}],"parameters":[{"name":"Multiplier","value":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":false}],"cs":{"instanceID":3694},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":32}
+
+    Multiply;{"name":"Multiply","position":{"x":-998.9917602539063,"y":1292.35595703125},"size":{"x":202.0,"y":222.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"A","linkedTex":{"instanceID":-37792}},{"name":"B","linkedTex":{"instanceID":-37846}}],"outputs":[{"name":"Output","tex":{"instanceID":-37838}}],"parameters":[{"name":"Multiplier","value":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":false}],"cs":{"instanceID":3694},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":32}
+
+    Polygon;{"name":"Polygon","position":{"x":-1487.57373046875,"y":1313.416748046875},"size":{"x":202.0,"y":284.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[],"outputs":[{"name":"Output","tex":{"instanceID":-37842}}],"parameters":[{"name":"Sides","value":{"x":6.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":3.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":32.0,"y":0.0,"z":0.0,"w":0.0},"type":0,"hasMinMax":true},{"name":"Falloff","value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true},{"name":"Scale","value":{"x":3.440999984741211,"y":-3.069000005722046,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false}],"cs":{"instanceID":3718},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":94}
+
+    OneMinus;{"name":"OneMinus","position":{"x":-1253.812744140625,"y":1502.95263671875},"size":{"x":202.0,"y":190.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-37842}}],"outputs":[{"name":"Output","tex":{"instanceID":-37846}}],"parameters":[],"cs":{"instanceID":3740},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":0}
+
+    Polygon;{"name":"Polygon","position":{"x":709.8504638671875,"y":1818.3465576171875},"size":{"x":200.65599060058595,"y":282.6559753417969},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[],"outputs":[{"name":"Output","tex":{"instanceID":-37926}}],"parameters":[{"name":"Sides","value":{"x":6.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":3.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":32.0,"y":0.0,"z":0.0,"w":0.0},"type":0,"hasMinMax":true},{"name":"Falloff","value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true},{"name":"Scale","value":{"x":3.5,"y":3.5,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false}],"cs":{"instanceID":3718},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":94}
+
+    Polygon;{"name":"Polygon","position":{"x":-591.2366943359375,"y":1860.9246826171875},"size":{"x":201.5334014892578,"y":283.5334167480469},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[],"outputs":[{"name":"Output","tex":{"instanceID":-37938}}],"parameters":[{"name":"Sides","value":{"x":3.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":3.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":32.0,"y":0.0,"z":0.0,"w":0.0},"type":0,"hasMinMax":true},{"name":"Falloff","value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true},{"name":"Scale","value":{"x":1.0,"y":1.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false}],"cs":{"instanceID":3718},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":94}
+
+    TilingOffset;{"name":"TilingOffset","position":{"x":47.31488037109375,"y":1868.9139404296875},"size":{"x":201.5334014892578,"y":113.10075378417969},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":false,"inputs":[{"name":"Input","linkedTex":{"instanceID":-37998}}],"outputs":[{"name":"Output","tex":{"instanceID":-37946}}],"parameters":[{"name":"Offset","value":{"x":0.0,"y":-0.20999999344348908,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false},{"name":"Tiling","value":{"x":1.0,"y":1.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false}],"cs":{"instanceID":3690},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":72}
+
+    Rotate;{"name":"Rotate","position":{"x":141.48458862304688,"y":2047.844482421875},"size":{"x":201.5334014892578,"y":73.10073852539063},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":false,"inputs":[{"name":"Input","linkedTex":{"instanceID":-37946}}],"outputs":[{"name":"Output","tex":{"instanceID":-37950}}],"parameters":[{"name":"Angle","value":{"x":60.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":-180.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":180.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true}],"cs":{"instanceID":3738},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":32}
+
+    Add;{"name":"Add","position":{"x":403.2238464355469,"y":1947.5225830078125},"size":{"x":200.4326629638672,"y":188.4326629638672},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"A","linkedTex":{"instanceID":-37946}},{"name":"B","linkedTex":{"instanceID":-37950}}],"outputs":[{"name":"Output","tex":{"instanceID":-37954}}],"parameters":[],"cs":{"instanceID":3726},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":0}
+
+    Rotate;{"name":"Rotate","position":{"x":140.78073120117188,"y":2131.069580078125},"size":{"x":200.4326629638672,"y":72.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":false,"inputs":[{"name":"Input","linkedTex":{"instanceID":-37950}}],"outputs":[{"name":"Output","tex":{"instanceID":-37958}}],"parameters":[{"name":"Angle","value":{"x":60.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":-180.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":180.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true}],"cs":{"instanceID":3738},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":32}
+
+    Add;{"name":"Add","position":{"x":405.0480651855469,"y":2172.567138671875},"size":{"x":200.4326629638672,"y":188.4326629638672},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"A","linkedTex":{"instanceID":-37954}},{"name":"B","linkedTex":{"instanceID":-37958}}],"outputs":[{"name":"Output","tex":{"instanceID":-37962}}],"parameters":[],"cs":{"instanceID":3726},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":0}
+
+    Rotate;{"name":"Rotate","position":{"x":186.38723754882813,"y":2329.330078125},"size":{"x":200.4326629638672,"y":220.4326629638672},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-37962}}],"outputs":[{"name":"Output","tex":{"instanceID":-37966}}],"parameters":[{"name":"Angle","value":{"x":180.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":-180.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":180.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true}],"cs":{"instanceID":3738},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":32}
+
+    Add;{"name":"Add","position":{"x":646.664794921875,"y":2383.5966796875},"size":{"x":200.4326629638672,"y":188.4326629638672},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"A","linkedTex":{"instanceID":-37962}},{"name":"B","linkedTex":{"instanceID":-37966}}],"outputs":[{"name":"Output","tex":{"instanceID":-37970}}],"parameters":[],"cs":{"instanceID":3726},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":0}
+
+    OneMinus;{"name":"OneMinus","position":{"x":944.4437255859375,"y":2232.3525390625},"size":{"x":199.4796142578125,"y":38.12583923339844},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":false,"inputs":[{"name":"Input","linkedTex":{"instanceID":-37970}}],"outputs":[{"name":"Output","tex":{"instanceID":-37974}}],"parameters":[],"cs":{"instanceID":3740},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":0}
+
+    Multiply;{"name":"Multiply","position":{"x":1221.7830810546875,"y":2050.837646484375},"size":{"x":199.4796142578125,"y":219.4796142578125},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"A","linkedTex":{"instanceID":-37926}},{"name":"B","linkedTex":{"instanceID":-37974}}],"outputs":[{"name":"Output","tex":{"instanceID":-37978}}],"parameters":[{"name":"Multiplier","value":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":false}],"cs":{"instanceID":3694},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":32}
+
+    Polygon;{"name":"Polygon","position":{"x":-888.442626953125,"y":2169.9326171875},"size":{"x":201.67010498046876,"y":283.67010498046877},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[],"outputs":[{"name":"Output","tex":{"instanceID":-37982}}],"parameters":[{"name":"Sides","value":{"x":4.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":3.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":32.0,"y":0.0,"z":0.0,"w":0.0},"type":0,"hasMinMax":true},{"name":"Falloff","value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true},{"name":"Scale","value":{"x":4.204999923706055,"y":-2.996000051498413,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false}],"cs":{"instanceID":3718},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":94}
+
+    TilingOffset;{"name":"TilingOffset","position":{"x":-589.457275390625,"y":2225.78515625},"size":{"x":201.67010498046876,"y":261.67010498046877},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-37982}}],"outputs":[{"name":"Output","tex":{"instanceID":-37986}}],"parameters":[{"name":"Offset","value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false},{"name":"Tiling","value":{"x":1.0,"y":20.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false}],"cs":{"instanceID":3690},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":72}
+
+    Rotate;{"name":"Rotate","position":{"x":-589.1895751953125,"y":2503.622802734375},"size":{"x":201.67010498046876,"y":221.67010498046876},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-37986}}],"outputs":[{"name":"Output","tex":{"instanceID":-37990}}],"parameters":[{"name":"Angle","value":{"x":90.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":-180.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":180.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true}],"cs":{"instanceID":3738},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":32}
+
+    Add;{"name":"Add","position":{"x":-322.3070983886719,"y":2439.125244140625},"size":{"x":201.67010498046876,"y":189.67010498046876},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"A","linkedTex":{"instanceID":-37986}},{"name":"B","linkedTex":{"instanceID":-37990}}],"outputs":[{"name":"Output","tex":{"instanceID":-37994}}],"parameters":[],"cs":{"instanceID":3726},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":0}
+
+    Subtract;{"name":"Subtract","position":{"x":-82.06549072265625,"y":2237.731201171875},"size":{"x":201.67010498046876,"y":189.67010498046876},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"A","linkedTex":{"instanceID":-37938}},{"name":"B","linkedTex":{"instanceID":-38010}}],"outputs":[{"name":"Output","tex":{"instanceID":-37998}}],"parameters":[],"cs":{"instanceID":3698},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":0}
+
+    Barrel;{"name":"Barrel","position":{"x":-178.09796142578126,"y":2718.86279296875},"size":{"x":201.18336486816407,"y":221.18336486816407},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-37994}}],"outputs":[{"name":"Output","tex":{"instanceID":-38006}}],"parameters":[{"name":"Power","value":{"x":3.0683999061584474,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":false}],"cs":{"instanceID":15416},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":32}
+
+    TilingOffset;{"name":"TilingOffset","position":{"x":164.52935791015626,"y":2658.76806640625},"size":{"x":200.74368286132813,"y":260.7436828613281},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-38006}}],"outputs":[{"name":"Output","tex":{"instanceID":-38010}}],"parameters":[{"name":"Offset","value":{"x":0.0,"y":0.5,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false},{"name":"Tiling","value":{"x":1.0,"y":1.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false}],"cs":{"instanceID":3690},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":72}
+
+    Export;{"name":"Export","position":{"x":1688.2169189453125,"y":2134.458984375},"size":{"x":400.0,"y":58.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-38058}}],"outputs":[],"parameters":[],"cs":{"instanceID":0},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":0,"path":"Assets/Seamless/Export/SnowFlake2.png"}
+
+    Merge;{"name":"Merge","position":{"x":1456.4134521484375,"y":2141.14013671875},"size":{"x":201.70391845703126,"y":40.000003814697269},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":false,"inputs":[{"name":"R","linkedTex":{"instanceID":-37978}},{"name":"G","linkedTex":{"instanceID":-37978}},{"name":"B","linkedTex":{"instanceID":-37978}},{"name":"A","linkedTex":{"instanceID":-37978}}],"outputs":[{"name":"Output","tex":{"instanceID":-38058}}],"parameters":[],"cs":{"instanceID":3724},"textureSize":{"x":1024.0,"y":1024.0},"settingsHeight":0}
+
+    Links:
+
+    {"fromIndex":2,"fromSubIndex":0,"toIndex":3,"toSubIndex":0}
+
+    {"fromIndex":2,"fromSubIndex":0,"toIndex":4,"toSubIndex":0}
+
+    {"fromIndex":4,"fromSubIndex":0,"toIndex":3,"toSubIndex":1}
+
+    {"fromIndex":1,"fromSubIndex":0,"toIndex":5,"toSubIndex":0}
+
+    {"fromIndex":5,"fromSubIndex":0,"toIndex":2,"toSubIndex":0}
+
+    {"fromIndex":6,"fromSubIndex":0,"toIndex":5,"toSubIndex":1}
+
+    {"fromIndex":3,"fromSubIndex":0,"toIndex":7,"toSubIndex":0}
+
+    {"fromIndex":3,"fromSubIndex":0,"toIndex":8,"toSubIndex":0}
+
+    {"fromIndex":7,"fromSubIndex":0,"toIndex":8,"toSubIndex":1}
+
+    {"fromIndex":0,"fromSubIndex":0,"toIndex":11,"toSubIndex":0}
+
+    {"fromIndex":10,"fromSubIndex":0,"toIndex":12,"toSubIndex":0}
+
+    {"fromIndex":13,"fromSubIndex":0,"toIndex":12,"toSubIndex":1}
+
+    {"fromIndex":12,"fromSubIndex":0,"toIndex":11,"toSubIndex":1}
+
+    {"fromIndex":8,"fromSubIndex":0,"toIndex":14,"toSubIndex":0}
+
+    {"fromIndex":15,"fromSubIndex":0,"toIndex":14,"toSubIndex":1}
+
+    {"fromIndex":14,"fromSubIndex":0,"toIndex":17,"toSubIndex":0}
+
+    {"fromIndex":14,"fromSubIndex":0,"toIndex":17,"toSubIndex":1}
+
+    {"fromIndex":14,"fromSubIndex":0,"toIndex":17,"toSubIndex":2}
+
+    {"fromIndex":14,"fromSubIndex":0,"toIndex":17,"toSubIndex":3}
+
+    {"fromIndex":17,"fromSubIndex":0,"toIndex":16,"toSubIndex":0}
+
+    {"fromIndex":18,"fromSubIndex":0,"toIndex":19,"toSubIndex":0}
+
+    {"fromIndex":11,"fromSubIndex":0,"toIndex":20,"toSubIndex":0}
+
+    {"fromIndex":19,"fromSubIndex":0,"toIndex":20,"toSubIndex":1}
+
+    {"fromIndex":20,"fromSubIndex":0,"toIndex":1,"toSubIndex":0}
+
+    {"fromIndex":9,"fromSubIndex":0,"toIndex":21,"toSubIndex":0}
+
+    {"fromIndex":22,"fromSubIndex":0,"toIndex":23,"toSubIndex":0}
+
+    {"fromIndex":23,"fromSubIndex":0,"toIndex":21,"toSubIndex":1}
+
+    {"fromIndex":21,"fromSubIndex":0,"toIndex":10,"toSubIndex":0}
+
+    {"fromIndex":26,"fromSubIndex":0,"toIndex":27,"toSubIndex":0}
+
+    {"fromIndex":26,"fromSubIndex":0,"toIndex":28,"toSubIndex":0}
+
+    {"fromIndex":27,"fromSubIndex":0,"toIndex":28,"toSubIndex":1}
+
+    {"fromIndex":27,"fromSubIndex":0,"toIndex":29,"toSubIndex":0}
+
+    {"fromIndex":28,"fromSubIndex":0,"toIndex":30,"toSubIndex":0}
+
+    {"fromIndex":29,"fromSubIndex":0,"toIndex":30,"toSubIndex":1}
+
+    {"fromIndex":30,"fromSubIndex":0,"toIndex":31,"toSubIndex":0}
+
+    {"fromIndex":30,"fromSubIndex":0,"toIndex":32,"toSubIndex":0}
+
+    {"fromIndex":31,"fromSubIndex":0,"toIndex":32,"toSubIndex":1}
+
+    {"fromIndex":32,"fromSubIndex":0,"toIndex":33,"toSubIndex":0}
+
+    {"fromIndex":24,"fromSubIndex":0,"toIndex":34,"toSubIndex":0}
+
+    {"fromIndex":33,"fromSubIndex":0,"toIndex":34,"toSubIndex":1}
+
+    {"fromIndex":35,"fromSubIndex":0,"toIndex":36,"toSubIndex":0}
+
+    {"fromIndex":36,"fromSubIndex":0,"toIndex":38,"toSubIndex":0}
+
+    {"fromIndex":37,"fromSubIndex":0,"toIndex":38,"toSubIndex":1}
+
+    {"fromIndex":25,"fromSubIndex":0,"toIndex":39,"toSubIndex":0}
+
+    {"fromIndex":39,"fromSubIndex":0,"toIndex":26,"toSubIndex":0}
+
+    {"fromIndex":36,"fromSubIndex":0,"toIndex":37,"toSubIndex":0}
+
+    {"fromIndex":38,"fromSubIndex":0,"toIndex":40,"toSubIndex":0}
+
+    {"fromIndex":41,"fromSubIndex":0,"toIndex":39,"toSubIndex":1}
+
+    {"fromIndex":40,"fromSubIndex":0,"toIndex":41,"toSubIndex":0}
+
+    {"fromIndex":34,"fromSubIndex":0,"toIndex":43,"toSubIndex":0}
+
+    {"fromIndex":34,"fromSubIndex":0,"toIndex":43,"toSubIndex":1}
+
+    {"fromIndex":34,"fromSubIndex":0,"toIndex":43,"toSubIndex":2}
+
+    {"fromIndex":34,"fromSubIndex":0,"toIndex":43,"toSubIndex":3}
+
+    {"fromIndex":43,"fromSubIndex":0,"toIndex":42,"toSubIndex":0}
+
+'
+  textureSize: {x: 1024, y: 1024}

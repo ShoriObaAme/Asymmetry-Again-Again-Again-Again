@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1678850157, guid: ede9f12173208bc41b05f96939f0c882, type: 3}
+  m_Name: MetalSheet
+  m_EditorClassIdentifier: 
+  data: 'SeamlessGraph
+
+    TilingOffset;{"name":"TilingOffset","position":{"x":185.59869384765626,"y":62.500701904296878},"size":{"x":202.0,"y":262.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-6868}}],"outputs":[{"name":"Output","tex":{"instanceID":-6804}}],"parameters":[{"name":"Offset","value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false},{"name":"Tiling","value":{"x":2.0,"y":8.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false}],"cs":{"instanceID":3694},"textureSize":{"x":256.0,"y":256.0},"settingsHeight":72}
+
+    UV;{"name":"UV","position":{"x":130.84527587890626,"y":452.85589599609377},"size":{"x":202.0,"y":190.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[],"outputs":[{"name":"Output","tex":{"instanceID":-6808}}],"parameters":[],"cs":{"instanceID":3734},"textureSize":{"x":256.0,"y":256.0},"settingsHeight":0}
+
+    Split;{"name":"Split","position":{"x":417.1505432128906,"y":399.5972900390625},"size":{"x":202.0,"y":190.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-6808}}],"outputs":[{"name":"R","tex":{"instanceID":-6812}},{"name":"G","tex":{"instanceID":-6814}},{"name":"B","tex":{"instanceID":-6816}},{"name":"A","tex":{"instanceID":-6818}}],"parameters":[],"cs":{"instanceID":3714},"textureSize":{"x":256.0,"y":256.0},"settingsHeight":0}
+
+    Step;{"name":"Step","position":{"x":741.3126220703125,"y":363.4407653808594},"size":{"x":202.0,"y":222.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-6812}}],"outputs":[{"name":"Output","tex":{"instanceID":-6822}}],"parameters":[{"name":"Edge","value":{"x":0.5,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true}],"cs":{"instanceID":3696},"textureSize":{"x":256.0,"y":256.0},"settingsHeight":32}
+
+    Step;{"name":"Step","position":{"x":745.05322265625,"y":611.550048828125},"size":{"x":202.0,"y":222.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-6814}}],"outputs":[{"name":"Output","tex":{"instanceID":-6826}}],"parameters":[{"name":"Edge","value":{"x":0.5,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true}],"cs":{"instanceID":3696},"textureSize":{"x":256.0,"y":256.0},"settingsHeight":32}
+
+    Multiply;{"name":"Multiply","position":{"x":1018.097412109375,"y":372.16845703125},"size":{"x":202.0,"y":222.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"A","linkedTex":{"instanceID":-6822}},{"name":"B","linkedTex":{"instanceID":-6826}}],"outputs":[{"name":"Output","tex":{"instanceID":-6830}}],"parameters":[{"name":"Multiplier","value":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":false}],"cs":{"instanceID":3698},"textureSize":{"x":256.0,"y":256.0},"settingsHeight":32}
+
+    Multiply;{"name":"Multiply","position":{"x":1417.0677490234375,"y":223.8014678955078},"size":{"x":202.0,"y":222.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"A","linkedTex":{"instanceID":-6804}},{"name":"B","linkedTex":{"instanceID":-6830}}],"outputs":[{"name":"Output","tex":{"instanceID":-6834}}],"parameters":[{"name":"Multiplier","value":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":false}],"cs":{"instanceID":3698},"textureSize":{"x":256.0,"y":256.0},"settingsHeight":32}
+
+    Rotate;{"name":"Rotate","position":{"x":1417.069091796875,"y":461.93646240234377},"size":{"x":202.0,"y":222.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-6834}}],"outputs":[{"name":"Output","tex":{"instanceID":-6838}}],"parameters":[{"name":"Angle","value":{"x":90.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":-180.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":180.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true}],"cs":{"instanceID":3736},"textureSize":{"x":256.0,"y":256.0},"settingsHeight":32}
+
+    Add;{"name":"Add","position":{"x":1737.49169921875,"y":364.6878356933594},"size":{"x":202.0,"y":190.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"A","linkedTex":{"instanceID":-6834}},{"name":"B","linkedTex":{"instanceID":-6838}}],"outputs":[{"name":"Output","tex":{"instanceID":-6842}}],"parameters":[],"cs":{"instanceID":3726},"textureSize":{"x":256.0,"y":256.0},"settingsHeight":0}
+
+    Rotate;{"name":"Rotate","position":{"x":1736.244873046875,"y":648.9537963867188},"size":{"x":202.0,"y":222.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-6842}}],"outputs":[{"name":"Output","tex":{"instanceID":-6846}}],"parameters":[{"name":"Angle","value":{"x":180.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":-180.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":180.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true}],"cs":{"instanceID":3736},"textureSize":{"x":256.0,"y":256.0},"settingsHeight":32}
+
+    Add;{"name":"Add","position":{"x":2085.3447265625,"y":616.5379638671875},"size":{"x":202.0,"y":190.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"A","linkedTex":{"instanceID":-6842}},{"name":"B","linkedTex":{"instanceID":-6846}}],"outputs":[{"name":"Output","tex":{"instanceID":-6850}}],"parameters":[],"cs":{"instanceID":3726},"textureSize":{"x":256.0,"y":256.0},"settingsHeight":0}
+
+    Blur;{"name":"Blur","position":{"x":2098.607421875,"y":839.1466674804688},"size":{"x":202.0,"y":250.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-6850}}],"outputs":[{"name":"Output","tex":{"instanceID":-6854}}],"parameters":[{"name":"Radius","value":{"x":0.009999999776482582,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0010000000474974514,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.10000000149011612,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true},{"name":"Steps","value":{"x":7.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":16.0,"y":0.0,"z":0.0,"w":0.0},"type":0,"hasMinMax":true}],"cs":{"instanceID":3710},"textureSize":{"x":256.0,"y":256.0},"settingsHeight":60}
+
+    Normal;{"name":"Normal","position":{"x":2379.46875,"y":909.8876953125},"size":{"x":202.0,"y":222.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-6854}}],"outputs":[{"name":"Output","tex":{"instanceID":-6858}}],"parameters":[{"name":"Scale","value":{"x":10.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":false}],"cs":{"instanceID":3700},"textureSize":{"x":256.0,"y":256.0},"settingsHeight":32}
+
+    Blur;{"name":"Blur","position":{"x":2601.33935546875,"y":924.0300903320313},"size":{"x":202.0,"y":250.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-6858}}],"outputs":[{"name":"Output","tex":{"instanceID":-6862}}],"parameters":[{"name":"Radius","value":{"x":0.009999999776482582,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0010000000474974514,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.10000000149011612,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true},{"name":"Steps","value":{"x":12.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":16.0,"y":0.0,"z":0.0,"w":0.0},"type":0,"hasMinMax":true}],"cs":{"instanceID":3710},"textureSize":{"x":256.0,"y":256.0},"settingsHeight":60}
+
+    Export;{"name":"Export","position":{"x":2870.567626953125,"y":1034.4193115234375},"size":{"x":400.0,"y":58.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[{"name":"Input","linkedTex":{"instanceID":-6862}}],"outputs":[],"parameters":[],"cs":{"instanceID":0},"textureSize":{"x":256.0,"y":256.0},"settingsHeight":0,"path":"Assets/Seamless/Export/Normal.png"}
+
+    Squircle;{"name":"Squircle","position":{"x":-285.2613830566406,"y":76.58674621582031},"size":{"x":202.0,"y":284.0},"pressed":false,"dragged":false,"selected":false,"dirty":false,"extended":true,"inputs":[],"outputs":[{"name":"Output","tex":{"instanceID":-6868}}],"parameters":[{"name":"Margins","value":{"x":0.17800000309944154,"y":2.5320000648498537,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"type":5,"hasMinMax":false},{"name":"Falloff","value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true},{"name":"Convex","value":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"min":{"x":0.0,"y":0.0,"z":0.0,"w":0.0},"max":{"x":1.0,"y":0.0,"z":0.0,"w":0.0},"type":4,"hasMinMax":true}],"cs":{"instanceID":3722},"textureSize":{"x":256.0,"y":256.0},"settingsHeight":94}
+
+    Links:
+
+    {"fromIndex":1,"fromSubIndex":0,"toIndex":2,"toSubIndex":0}
+
+    {"fromIndex":2,"fromSubIndex":0,"toIndex":3,"toSubIndex":0}
+
+    {"fromIndex":2,"fromSubIndex":1,"toIndex":4,"toSubIndex":0}
+
+    {"fromIndex":3,"fromSubIndex":0,"toIndex":5,"toSubIndex":0}
+
+    {"fromIndex":4,"fromSubIndex":0,"toIndex":5,"toSubIndex":1}
+
+    {"fromIndex":5,"fromSubIndex":0,"toIndex":6,"toSubIndex":1}
+
+    {"fromIndex":6,"fromSubIndex":0,"toIndex":7,"toSubIndex":0}
+
+    {"fromIndex":6,"fromSubIndex":0,"toIndex":8,"toSubIndex":0}
+
+    {"fromIndex":7,"fromSubIndex":0,"toIndex":8,"toSubIndex":1}
+
+    {"fromIndex":8,"fromSubIndex":0,"toIndex":9,"toSubIndex":0}
+
+    {"fromIndex":8,"fromSubIndex":0,"toIndex":10,"toSubIndex":0}
+
+    {"fromIndex":9,"fromSubIndex":0,"toIndex":10,"toSubIndex":1}
+
+    {"fromIndex":10,"fromSubIndex":0,"toIndex":11,"toSubIndex":0}
+
+    {"fromIndex":12,"fromSubIndex":0,"toIndex":13,"toSubIndex":0}
+
+    {"fromIndex":0,"fromSubIndex":0,"toIndex":6,"toSubIndex":0}
+
+    {"fromIndex":13,"fromSubIndex":0,"toIndex":14,"toSubIndex":0}
+
+    {"fromIndex":15,"fromSubIndex":0,"toIndex":0,"toSubIndex":0}
+
+    {"fromIndex":11,"fromSubIndex":0,"toIndex":12,"toSubIndex":0}
+
+'
+  textureSize: {x: 256, y: 256}
