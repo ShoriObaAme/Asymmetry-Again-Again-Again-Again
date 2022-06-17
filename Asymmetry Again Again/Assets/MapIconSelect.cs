@@ -13,13 +13,16 @@ public class MapIconSelect : MonoBehaviour
 	public Image mapImage;
 	public TextMeshProUGUI mapName;
 
+	private GameManager gameManager;
+
 	[SerializeField] private MapSelectAnimationHandler MSAH;
 
 	private void Start()
 	{
+		gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+		MSAH = transform.GetComponentInParent<MapSelectAnimationHandler>();
 		mapImage.sprite = mapIcon.LevelIcon;
 		mapName.text = mapIcon.LevelName;
-		MSAH = transform.GetComponentInParent<MapSelectAnimationHandler>();
 	}
 
 	public void DebugButton()
@@ -35,6 +38,7 @@ public class MapIconSelect : MonoBehaviour
 
 	public IEnumerator LoadScene()
 	{
+		gameManager.ChangeGameMode(Mode.MULTIPLAYER);
 		yield return new WaitForSeconds(5);
 		SceneManager.LoadScene(mapIcon.SceneToLoad);
 	}

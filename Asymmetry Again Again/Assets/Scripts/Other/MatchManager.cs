@@ -45,6 +45,9 @@ public class MatchManager : MonoBehaviour
     [Header("Animation")]
     private Animator anim;
 
+    [Header("Readying Up")]
+    [SerializeField] private GameObject ReadyUpBox;
+
     public static event Action<MatchStatus> OnMatchStatusChange;
 
 	private void Awake()
@@ -52,7 +55,15 @@ public class MatchManager : MonoBehaviour
         instance = this;
 	}
 
+	private void OnEnable()
+	{
+        ChangeMatchStatus(MatchStatus.NOT_STARTED);
+	}
 
+	private void OnDisable()
+	{
+        ChangeMatchStatus(MatchStatus.NOT_STARTED);
+	}
 
 	// Start is called before the first frame update
 	void Start()
@@ -129,6 +140,7 @@ public class MatchManager : MonoBehaviour
         switch (status)
 		{
             case MatchStatus.NOT_STARTED:
+                LocateReadyUpBox();
                 EndReadyUp();
                 break;
             case MatchStatus.STARTING:
@@ -152,6 +164,11 @@ public class MatchManager : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+	}
+
+    private void LocateReadyUpBox()
+	{
+        ReadyUpBox = GameObject.FindGameObjectWithTag("Ready Up Box");
 	}
 
     private void EndMatch()

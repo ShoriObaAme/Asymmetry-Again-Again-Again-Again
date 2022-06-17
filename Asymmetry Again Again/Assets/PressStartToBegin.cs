@@ -31,6 +31,7 @@ public class PressStartToBegin : MonoBehaviour
 
 	IEnumerator LoadTitleScene()
 	{
+		gameManager.ChangeGameMode(Mode.MAIN_MENU);
 		AsyncOperation asynLoad = SceneManager.LoadSceneAsync(SceneToLoad);
 		while (!asynLoad.isDone)
 		{

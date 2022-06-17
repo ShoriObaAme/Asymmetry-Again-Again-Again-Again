@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
 		}
 #endregion
 		DontDestroyOnLoad(this);
+		Application.targetFrameRate = 60;
 	}
 
 	public void ChangeGameMode(Mode newMode)
