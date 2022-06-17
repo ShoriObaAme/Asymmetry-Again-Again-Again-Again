@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 [RequireComponent(typeof(PlayerInput))]
 [RequireComponent(typeof(CapsuleCollider))]
 [RequireComponent(typeof(TeleportCheck))]
@@ -14,6 +15,7 @@ public class UpdatedCharacterController : MonoBehaviour
 
     [Header("Components")]
     private Rigidbody rb;
+    [SerializeField] private SpawnPoints spawnPoints;
 
     [Header("Camera")]
     [SerializeField]private Transform weaponHolder;
@@ -47,6 +49,14 @@ public class UpdatedCharacterController : MonoBehaviour
 
     [Header("Knockback / Health")]
     public int Lives;
+    public int MaxLives;
+    public float CurrentKnockbackVlaue;
+    [SerializeField] private float KnockBackValueDisplay;
+    public bool canPlayerRespawn = true;
+
+    [Header("Text")]
+    [SerializeField] private TextMeshProUGUI LivesText, KnockbackValueText;
+
 
     [Header("Shield")]
     [Tooltip("The shield gameobject")]
@@ -73,16 +83,21 @@ public class UpdatedCharacterController : MonoBehaviour
     private void AssignComponents()
 	{
         rb = GetComponent<Rigidbody>();
+        spawnPoints = GameObject.Find("Game Manager").GetComponent<SpawnPoints>();
         return;
 	}
 	// Update is called once per frame
 	void Update()
     {
+        Lives = Mathf.Clamp(Lives, 0, MaxLives);
         if (!isGrounded)
 		{
             rb.AddForce(-transform.up * gravityValue, ForceMode.Impulse);
             Debug.Log("Applying Gravity. Current Force: " + gravityValue);
 		}
+        KnockBackValueDisplay = CurrentKnockbackVlaue / 10;
+        KnockbackValueText.text = "%" + KnockBackValueDisplay.ToString("000");
+        LivesText.text = "Lives: " + Lives.ToString("0");
     }
 
 	private void FixedUpdate()
@@ -91,21 +106,25 @@ public class UpdatedCharacterController : MonoBehaviour
         CheckYVelocity();
 		PlayerMovement();
         LookAtMouse();
+        if (!canPlayerRespawn)
+		{
+            LookAtBody();
+		}
 	}
 
     public void Shield()
 	{
-        if (isShieldActive)
+        if (!isShieldActive)
 		{
-            isShieldActive = false;
-            shield.SetActive(false);
-            shieldIcon.SetActive(false);
-		}
-        else
-		{
-            isShieldActive = true;
             shield.SetActive(true);
             shieldIcon.SetActive(true);
+            isShieldActive = true;
+		}
+        else if (isShieldActive)
+		{
+            shield.SetActive(false);
+            shieldIcon.SetActive(false);
+            isShieldActive = false;
 		}
         return;
 	}
@@ -137,18 +156,24 @@ public class UpdatedCharacterController : MonoBehaviour
 
     private void PlayerMovement()
 	{
-        direction = gameObject.transform.right * move.x + gameObject.transform.forward * move.y;
-        rb.AddForce(direction * (movementSpeed * MovementSpeedMultiplier) * Time.fixedDeltaTime);
+        if (canPlayerRespawn)
+		{
+            direction = gameObject.transform.right * move.x + gameObject.transform.forward * move.y;
+            rb.AddForce(direction * (movementSpeed * MovementSpeedMultiplier) * Time.fixedDeltaTime);
+		}
 	}
 
     private void LookAtMouse()
 	{
-        Vector3 rotation = gameObject.transform.localRotation.eulerAngles;
-        float xTo = rotation.y + mouseVector.x;
-        xRotation -= mouseVector.y;
-        xRotation = Mathf.Clamp(xRotation, -maxAngle, maxAngle);
-        playerCam.localRotation = Quaternion.Euler(xRotation, 0, 0);
-        gameObject.transform.localRotation = Quaternion.Euler(0, xTo, 0);
+        if (canPlayerRespawn)
+		{
+            Vector3 rotation = gameObject.transform.localRotation.eulerAngles;
+            float xTo = rotation.y + mouseVector.x;
+            xRotation -= mouseVector.y;
+            xRotation = Mathf.Clamp(xRotation, -maxAngle, maxAngle);
+            playerCam.localRotation = Quaternion.Euler(xRotation, 0, 0);
+            gameObject.transform.localRotation = Quaternion.Euler(0, xTo, 0);
+		}
         
 	}
 
@@ -162,7 +187,49 @@ public class UpdatedCharacterController : MonoBehaviour
 	{
         if (transform.position.y < -30)
 		{
-            Destroy(gameObject);
+            Die();
 		}
 	}
+
+    public void AddLife()
+	{
+        Lives += 1;
+        return;
+	}
+
+	private void Die()
+	{
+        if (Lives > 0)
+        {
+            RespawnDie();
+        }
+        else PermaDie();
+	}
+
+    private void RespawnDie()
+	{
+        Lives--;
+        CurrentKnockbackVlaue = 0;
+        spawnPoints.RespawnPlayer(this.gameObject);
+        return;
+	}
+
+    private void PermaDie()
+	{
+        canPlayerRespawn = false;
+        playerCam.parent = null;
+        StartCoroutine(DestroyPlayerBody());
+	}
+
+    private IEnumerator DestroyPlayerBody()
+	{
+        yield return new WaitForSeconds(10);
+        Destroy(gameObject);
+        yield break;
+	}
+
+    private void LookAtBody()
+	{
+        playerCam.LookAt(gameObject.transform);
+    }
 }

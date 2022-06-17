@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1404030015167032253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1404030015167032251}
+  - component: {fileID: 1404030015167032252}
+  - component: {fileID: 1404030015167032250}
+  - component: {fileID: -5012199437127610479}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1404030015167032251
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404030015167032253}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 120.000015, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1404030015167032252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404030015167032253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 964a9a7f37d461646a7c4cae90d0ab15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameMode: 5
+  matchManager: {fileID: 0}
+  PlayerToAdd: 0
+--- !u!114 &1404030015167032250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404030015167032253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64144893c70ebab479cf371d71cfd317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  matchStatus: 0
+  gameManager: {fileID: 0}
+  PIM: {fileID: 0}
+  players: []
+  playersLeftAlive: 0
+  playersDead: 0
+  matchDurationInSeconds: 0
+  timerIsRunning: 0
+  MatchStarting: 0
+  matchStartTime: 0
+  matchHasStarted: 0
+  PlayersInLobby: 0
+  timeText: {fileID: 0}
+  PlayersLeftAliveText: {fileID: 0}
+  PlayersDeadText: {fileID: 0}
+  totalPlayersText: {fileID: 0}
+  ReadyUpText: 
+--- !u!114 &-5012199437127610479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404030015167032253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d728ba64791885d489af451284e90f74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints: []
+  chosenSpawnPoint: 0
+  chosen: {fileID: 0}
+  timeUntilCancel: 0

@@ -8,16 +8,17 @@ public class SpawnPointChosen : MonoBehaviour
 	public bool grounded;
 	public LayerMask whatIsGround;
 	public Color DebugColor;
-	private SpawnPoints spawnPoint;
+	public Vector3 offset;
+	[SerializeField] private SpawnPoints spawnPoint;
 
 	private void Start()
 	{
-		spawnPoint = SpawnPoints.SP;
+		spawnPoint = GameObject.Find("Game Manager").GetComponent<SpawnPoints>();
 	}
 
 	public void Update()
 	{
-		grounded = Physics.CheckSphere(transform.position, .25f, whatIsGround);
+		grounded = Physics.CheckSphere(transform.position + offset, .25f, whatIsGround);
 		if (!grounded)
 		{
 			spawnPoint.spawnPoints.Remove(this.gameObject);
@@ -28,6 +29,6 @@ public class SpawnPointChosen : MonoBehaviour
 	void OnDrawGizmosSelected()
 	{
 		Gizmos.color = DebugColor;
-		Gizmos.DrawSphere(transform.position, .25f);
+		Gizmos.DrawSphere(transform.position + offset, .25f);
 	}
 }
