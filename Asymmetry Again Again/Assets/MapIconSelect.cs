@@ -1,33 +1,41 @@
+using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MapIconSelect : MonoBehaviour
 {
 	[Header("Map Icon Scriptable Object")]
-    public MapIcons mapIcon;
+	public MapIcons mapIcon;
 
-    [Header("Map Icon Image / Text")]
-    public TextMeshProUGUI LevelName;
-    public Sprite LevelIcon;
+	[Header("Text / Image")]
+	public Image mapImage;
+	public TextMeshProUGUI mapName;
 
-    [Header("Animator")]
-    [SerializeField] private Animator anim;
+	[SerializeField] private MapSelectAnimationHandler MSAH;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        LevelName.text = mapIcon.LevelName;
-        LevelIcon = mapIcon.LevelIcon;
-    }
-
-    public void MapSelectAnim()
+	private void Start()
 	{
-
+		mapImage.sprite = mapIcon.LevelIcon;
+		mapName.text = mapIcon.LevelName;
+		MSAH = transform.GetComponentInParent<MapSelectAnimationHandler>();
 	}
 
-    private void LoadMap()
+	public void DebugButton()
 	{
+		Debug.Log("This button (" + mapIcon.name + ") works as intended");
+	}
 
+	public void MapSelectAnim()
+	{
+		MSAH.DecideAnimationToPlay();
+		StartCoroutine(LoadScene());
+	}
+
+	public IEnumerator LoadScene()
+	{
+		yield return new WaitForSeconds(5);
+		SceneManager.LoadScene(mapIcon.SceneToLoad);
 	}
 }

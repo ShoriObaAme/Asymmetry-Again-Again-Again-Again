@@ -11,4 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map Select/Map Select.unity
     guid: 0f45176f4d60fbb42a6c1e33b209ecc9
+  - enabled: 1
+    path: Assets/Scenes/Hellscape/Hellscape.unity
+    guid: 5ec4151ece331f8489a1a058e3b35d1c
+  - enabled: 1
+    path: Assets/Scenes/Coliseum/Coliseum.unity
+    guid: 226986e7c110e1c449f13abcda5265c3
+  - enabled: 1
+    path: Assets/Scenes/Rooftops/Rooftops.unity
+    guid: b6d510a41c8f30947ac6f3c8a55573fc
+  - enabled: 1
+    path: Assets/Scenes/Mall/Mall.unity
+    guid: 522085d688adda8498f344564ef4f441
   m_configObjects: {}
