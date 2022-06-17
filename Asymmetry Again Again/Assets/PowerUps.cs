@@ -28,7 +28,7 @@ public class PowerUps : MonoBehaviour
 	[Header("Reset Settings")]
 	public GameObject meshHolder;
 	[SerializeField] private SphereCollider SC;
-	private UpdatedCharacterController UCC;
+	[SerializeField] private UpdatedCharacterController UCC;
 	public float PowerUpResetTimeBase;
 	public int ResetTimeMulti;
 	[SerializeField] private float TotalResetTime;
