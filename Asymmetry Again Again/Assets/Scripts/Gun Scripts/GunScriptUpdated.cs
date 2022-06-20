@@ -18,7 +18,7 @@ public class GunScriptUpdated : MonoBehaviour
     [Header("Gun Stats")]
     public WeaponType weaponType;
     [SerializeField] private float reloadTime, timeBetweenBulletsFired, timeBetweenShots, BulletForce, Spread;
-    [SerializeField] private int damage, totalAmmo, startingAmmo, currentAmmo, bulletsFiredPerShot, bulletsFired;
+    public int damage, totalAmmo, startingAmmo, currentAmmo, bulletsFiredPerShot, bulletsFired;
     [SerializeField] private bool allowHold, canFire, isReloading;
     [SerializeField] private GameObject BulletOrProjectilePrefab;
     [SerializeField] private Transform BulletOrProjectileFirePoint;
@@ -55,7 +55,7 @@ public class GunScriptUpdated : MonoBehaviour
         startingAmmo = gun.StartingAmmo;
         allowHold = gun.allowWeaponHold;
         Spread = gun.spread;
-        BulletForce = gun.range;
+        BulletForce = gun.bulletForce;
         timeBetweenBulletsFired = gun.timeBetweenShots;
         timeBetweenShots = gun.timeBetweenCanShootAgain;
         BulletOrProjectilePrefab = gun.ProjectilePrefab;
@@ -67,23 +67,33 @@ public class GunScriptUpdated : MonoBehaviour
         playerInput = GetComponentInParent<PlayerInput>();
 	}
 
-    public void OnFire()
+    /*public void OnFire()
 	{
+        Debug.Log("Running Shoot Method.");
         if (canFire && !isReloading && currentAmmo >= 1)
         {
-            Debug.Log("Running Shoot Method.");
+            
             Shoot();
 		}
-	}
+	}*/
+
+    public void CheckShoot()
+	{
+        Debug.Log("Running Shoot Method.");
+        if (canFire && !isReloading && currentAmmo >= 1)
+        {
+            Shoot();
+        }
+    }
 
     private void Shoot()
 	{
         canFire = false;
         currentAmmo--;
         bulletsFired++;
-        GameObject bullet = Instantiate(BulletOrProjectilePrefab, BulletOrProjectileFirePoint.position, Quaternion.identity);
+        GameObject bullet = Instantiate(BulletOrProjectilePrefab, BulletOrProjectileFirePoint.position, BulletOrProjectilePrefab.transform.rotation);
         Rigidbody RB = bullet.GetComponent<Rigidbody>();
-        RB.AddForce(BulletOrProjectileFirePoint.up * BulletForce, ForceMode.Impulse);
+        RB.AddForce(BulletOrProjectileFirePoint.forward * BulletForce, ForceMode.Impulse);
         if ((currentAmmo <= 0 && totalAmmo > 0))
 		{
             Reload();

@@ -38,8 +38,8 @@ public class MapIconSelect : MonoBehaviour
 
 	public IEnumerator LoadScene()
 	{
-		gameManager.ChangeGameMode(Mode.MULTIPLAYER);
 		yield return new WaitForSeconds(5);
 		SceneManager.LoadScene(mapIcon.SceneToLoad);
+		gameManager.ChangeGameMode(Mode.MULTIPLAYER);
 	}
 }

@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Spawn Point
   - Ready Up Box
+  - Knockback
   layers:
   - Default
   - TransparentFX

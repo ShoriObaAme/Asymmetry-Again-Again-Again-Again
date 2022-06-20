@@ -16,6 +16,7 @@ public class UpdatedCharacterController : MonoBehaviour
     [Header("Components")]
     private Rigidbody rb;
     [SerializeField] private SpawnPoints spawnPoints;
+    [SerializeField] private MatchManager matchManager;
 
     [Header("Camera")]
     [SerializeField]private Transform weaponHolder;
@@ -84,11 +85,13 @@ public class UpdatedCharacterController : MonoBehaviour
 	{
         rb = GetComponent<Rigidbody>();
         spawnPoints = GameObject.Find("Game Manager").GetComponent<SpawnPoints>();
+        matchManager = GameObject.Find("Game Manager").GetComponent<MatchManager>();
         return;
 	}
 	// Update is called once per frame
 	void Update()
     {
+        canPlayerRespawn = Lives >= 1;
         Lives = Mathf.Clamp(Lives, 0, MaxLives);
         if (!isGrounded)
 		{
@@ -114,13 +117,13 @@ public class UpdatedCharacterController : MonoBehaviour
 
     public void Shield()
 	{
-        if (!isShieldActive)
+        if (!isShieldActive && matchManager.matchStatus == MatchStatus.IN_PROGRESS)
 		{
             shield.SetActive(true);
             shieldIcon.SetActive(true);
             isShieldActive = true;
 		}
-        else if (isShieldActive)
+        else if (isShieldActive && matchManager.matchStatus == MatchStatus.IN_PROGRESS)
 		{
             shield.SetActive(false);
             shieldIcon.SetActive(false);
@@ -183,7 +186,26 @@ public class UpdatedCharacterController : MonoBehaviour
         Gizmos.DrawSphere(transform.position + GroundCheckOffset, GroundCheckRadius);
 	}
 
-    private void CheckYVelocity()
+	private void OnTriggerEnter(Collider collision)
+	{
+        if (collision.gameObject.tag == ("Bullet"))
+        {
+            projectileDamage PD = collision.gameObject.GetComponent<projectileDamage>();
+            CurrentKnockbackVlaue += PD.ProjectileDamage;
+            PD = null;
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.tag == ("Knockback"))
+        {
+            rb.AddForce(transform.up * CurrentKnockbackVlaue, ForceMode.Impulse);
+            rb.AddForce(-transform.forward * CurrentKnockbackVlaue, ForceMode.Impulse);
+            CurrentKnockbackVlaue = 0;
+            Destroy(collision.gameObject);
+        }
+        return;
+	}
+
+	private void CheckYVelocity()
 	{
         if (transform.position.y < -30)
 		{
@@ -199,16 +221,20 @@ public class UpdatedCharacterController : MonoBehaviour
 
 	private void Die()
 	{
-        if (Lives > 0)
+        Lives--;
+        if (Lives >= 1 & canPlayerRespawn)
         {
             RespawnDie();
         }
-        else PermaDie();
+        else if (Lives <= 0 & !canPlayerRespawn) 
+        {
+            PermaDie(); 
+        }
+        return;
 	}
 
     private void RespawnDie()
 	{
-        Lives--;
         CurrentKnockbackVlaue = 0;
         spawnPoints.RespawnPlayer(this.gameObject);
         return;

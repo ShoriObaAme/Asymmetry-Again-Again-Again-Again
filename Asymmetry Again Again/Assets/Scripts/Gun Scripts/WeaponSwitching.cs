@@ -12,7 +12,7 @@ public class WeaponSwitching : MonoBehaviour
 	{
 		if (CurrentlySelectedWeapon == 0)
 		{
-			EquipPistol();
+			EquipCannon();
 		}
 		else if (CurrentlySelectedWeapon == 1)
 		{
@@ -20,19 +20,33 @@ public class WeaponSwitching : MonoBehaviour
 		}
 	}
 
+	private void OnFire()
+	{
+		if (CurrentlySelectedWeapon == 0)
+		{
+			GunScriptUpdated gunScript = WeaponHolder.GetChild(0).GetComponent<GunScriptUpdated>();
+			gunScript.CheckShoot();
+		}
+		else if (CurrentlySelectedWeapon == 1)
+		{
+			GunScriptUpdated gunScript = WeaponHolder.GetChild(1).GetComponent<GunScriptUpdated>();
+			gunScript.CheckShoot();
+		}
+	}
+
 	private void EquipPistol()
 	{
-			WeaponHolder.GetChild(0).gameObject.SetActive(false);
-			WeaponHolder.GetChild(1).gameObject.SetActive(true);
-			CurrentlySelectedWeapon = 1;
+			WeaponHolder.GetChild(0).gameObject.SetActive(true);
+			WeaponHolder.GetChild(1).gameObject.SetActive(false);
+			CurrentlySelectedWeapon = 0;
 			return;
 	}
 
 	private void EquipCannon()
 	{
-			WeaponHolder.GetChild(1).gameObject.SetActive(false);
-			WeaponHolder.GetChild(0).gameObject.SetActive(true);
-			CurrentlySelectedWeapon = 0;
+			WeaponHolder.GetChild(0).gameObject.SetActive(false);
+			WeaponHolder.GetChild(1).gameObject.SetActive(true);
+			CurrentlySelectedWeapon = 1;
 			return;
 	}
 }

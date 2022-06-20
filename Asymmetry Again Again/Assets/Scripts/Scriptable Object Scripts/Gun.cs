@@ -6,6 +6,6 @@ public class Gun : ScriptableObject
     public string WeaponName;
     public GameObject ProjectilePrefab;
     public int TotalAmmo, StartingAmmo, Damage;
-    public float spread, range, timeBetweenShots, ProjectilesPerShot, ReloadTime, timeBetweenCanShootAgain;
+    public float spread, range, timeBetweenShots, ProjectilesPerShot, ReloadTime, timeBetweenCanShootAgain, bulletForce;
     public bool allowWeaponHold;
 }
