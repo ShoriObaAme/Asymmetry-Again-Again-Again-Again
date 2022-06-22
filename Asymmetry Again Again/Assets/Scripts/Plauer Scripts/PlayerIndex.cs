@@ -21,7 +21,7 @@ public class PlayerIndex : MonoBehaviour
 
    private void SetPlayerNo()
 	{
-        gameManager = GameObject.Find("Game Wide Manager").GetComponent<GameManager>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         currentPlayerNo = gameManager.PlayerToAdd;
         gameManager.PlayerToAdd += 1;
         SetPlayerBody();

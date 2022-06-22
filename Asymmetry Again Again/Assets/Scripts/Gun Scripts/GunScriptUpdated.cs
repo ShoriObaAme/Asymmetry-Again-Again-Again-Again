@@ -89,7 +89,7 @@ public class GunScriptUpdated : MonoBehaviour
     private void Shoot()
 	{
         canFire = false;
-        currentAmmo--;
+        //currentAmmo--;
         bulletsFired++;
         GameObject bullet = Instantiate(BulletOrProjectilePrefab, BulletOrProjectileFirePoint.position, BulletOrProjectilePrefab.transform.rotation);
         Rigidbody RB = bullet.GetComponent<Rigidbody>();

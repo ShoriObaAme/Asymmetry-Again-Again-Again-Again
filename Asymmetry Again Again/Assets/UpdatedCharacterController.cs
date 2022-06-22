@@ -17,6 +17,7 @@ public class UpdatedCharacterController : MonoBehaviour
     private Rigidbody rb;
     [SerializeField] private SpawnPoints spawnPoints;
     [SerializeField] private MatchManager matchManager;
+    [SerializeField] private CapsuleCollider TriggerCC;
 
     [Header("Camera")]
     [SerializeField]private Transform weaponHolder;
@@ -86,6 +87,7 @@ public class UpdatedCharacterController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         spawnPoints = GameObject.Find("Game Manager").GetComponent<SpawnPoints>();
         matchManager = GameObject.Find("Game Manager").GetComponent<MatchManager>();
+        matchManager.players.Add(this.gameObject);
         return;
 	}
 	// Update is called once per frame
@@ -95,9 +97,14 @@ public class UpdatedCharacterController : MonoBehaviour
         Lives = Mathf.Clamp(Lives, 0, MaxLives);
         if (!isGrounded)
 		{
+            TriggerCC.enabled = false;
             rb.AddForce(-transform.up * gravityValue, ForceMode.Impulse);
             Debug.Log("Applying Gravity. Current Force: " + gravityValue);
 		}
+        else if (isGrounded)
+        {
+            TriggerCC.enabled = true;
+        }
         KnockBackValueDisplay = CurrentKnockbackVlaue / 10;
         KnockbackValueText.text = "%" + KnockBackValueDisplay.ToString("000");
         LivesText.text = "Lives: " + Lives.ToString("0");
@@ -106,7 +113,7 @@ public class UpdatedCharacterController : MonoBehaviour
 	private void FixedUpdate()
 	{
         isGrounded = Physics.CheckSphere(transform.position + GroundCheckOffset, GroundCheckRadius, WhatIsGround);
-        CheckYVelocity();
+       // CheckYVelocity();
 		PlayerMovement();
         LookAtMouse();
         if (!canPlayerRespawn)
@@ -201,6 +208,10 @@ public class UpdatedCharacterController : MonoBehaviour
             rb.AddForce(-transform.forward * CurrentKnockbackVlaue, ForceMode.Impulse);
             CurrentKnockbackVlaue = 0;
             Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.tag == ("Killbounds"))
+        {
+            Die();
         }
         return;
 	}
