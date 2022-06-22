@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoints: {fileID: 0}
   matchManager: {fileID: 0}
+  TriggerCC: {fileID: 7648085218866425139}
   weaponHolder: {fileID: 6551833563660304231}
   playerCam: {fileID: 6551833564200649346}
   cameraSensitivity: 90

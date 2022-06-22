@@ -68,6 +68,8 @@ public class MatchManager : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
+        timeText = GameObject.Find("Multiplayer Canvas").GetComponentInChildren<TextMeshProUGUI>();
+        timeText.text = "Press A to join.";
         foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
 		{
             players.Add(player);
@@ -94,48 +96,7 @@ public class MatchManager : MonoBehaviour
         {
             timeText.text = "Please enter the designated area to begin the match.";
         }*/
-        if (players.Count >= 2)
-        {
-            ChangeMatchStatus(MatchStatus.STARTING);
-        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (timerIsRunning)
-		{
-            matchDurationInSeconds -= Time.deltaTime;
-            MatchTrack();
-		}
-
-        //if ((timerIsRunning && matchDurationInSeconds <= 0) || (playersDead >= 3 && playersLeftAlive <= 1 && matchStatus == MatchStatus.IN_PROGRESS))
-        if (playersDead >= (players.Count - 1) && playersLeftAlive <= 1 && matchStatus == MatchStatus.IN_PROGRESS)
-        {
-            ChangeMatchStatus(MatchStatus.ENDING);
-		}
-
-        if (MatchStarting && matchStatus == MatchStatus.STARTING)
-		{
-            StartMatchCountdown(matchStartTime);
-		}
-    }
-
-    private void MatchTrack()
-	{
-        DisplayTime(matchDurationInSeconds);
-        PlayersLeftAliveText.text = "Players Alive: " + playersLeftAlive.ToString("0");
-        PlayersDeadText.text = "Players Dead:  " + playersDead.ToString("0");
-        return;
-    }
-
-    private void BeginMatch()
-	{
-        MatchStarting = false;
-        timerIsRunning = true;
-        totalPlayersText.text = "Total Players: " + players.Count.ToString("0");
-        GameObject.FindGameObjectWithTag("Ready Up Box").SetActive(false);
-	}
 
     public void ChangeMatchStatus(MatchStatus status)
 	{
@@ -144,8 +105,8 @@ public class MatchManager : MonoBehaviour
         switch (status)
 		{
             case MatchStatus.NOT_STARTED:
-                LocateReadyUpBox();
-                EndReadyUp();
+                //LocateReadyUpBox();
+                //EndReadyUp();
                 break;
             case MatchStatus.STARTING:
                 MatchStarting = true;
@@ -161,6 +122,66 @@ public class MatchManager : MonoBehaviour
 		}
         OnMatchStatusChange?.Invoke(matchStatus);
 	}
+    // Update is called once per frame
+    void Update()
+    {
+        if (players.Count >= 2 && !matchHasStarted)
+        {
+            ChangeMatchStatus(MatchStatus.STARTING);
+        }
+        if (timerIsRunning)
+		{
+            matchDurationInSeconds -= Time.deltaTime;
+            MatchTrack();
+		}
+
+        //if ((timerIsRunning && matchDurationInSeconds <= 0) || (playersDead >= 3 && playersLeftAlive <= 1 && matchStatus == MatchStatus.IN_PROGRESS))
+        if (playersDead >= (players.Count - 1) && playersLeftAlive <= 1 && matchStatus == MatchStatus.IN_PROGRESS)
+        {
+            ChangeMatchStatus(MatchStatus.ENDING);
+		}
+
+        if (MatchStarting && matchStatus == MatchStatus.STARTING)
+		{
+            timeText.text = matchStartTime.ToString("0");
+            matchStartTime -= Time.deltaTime;
+            if (matchStartTime <= 0)
+            {
+                MatchStarting = false;
+                timeText.text = "Begin!";
+                Invoke("StartMatch", 1.5f);
+            }
+		}
+
+        if (matchHasStarted && matchStatus == MatchStatus.IN_PROGRESS)
+        {
+            timerIsRunning = true;
+        }
+
+        if (matchDurationInSeconds <= 0 && matchHasStarted && matchStatus == MatchStatus.IN_PROGRESS)
+        {
+            timerIsRunning = false;
+            ChangeMatchStatus(MatchStatus.ENDING);
+        }
+    }
+
+    private void MatchTrack()
+	{
+        DisplayTime(matchDurationInSeconds);
+        //PlayersLeftAliveText.text = "Players Alive: " + playersLeftAlive.ToString("0");
+      //xx  PlayersDeadText.text = "Players Dead:  " + playersDead.ToString("0");
+        return;
+    }
+
+    private void BeginMatch()
+	{
+        matchHasStarted = true;
+        MatchStarting = false;
+        timerIsRunning = true;
+        totalPlayersText.text = "Total Players: " + players.Count.ToString("0");
+        GameObject.FindGameObjectWithTag("Ready Up Box").SetActive(false);
+	}
+
 
     private void DisplayTime(float timeToDisplay)
 	{
@@ -180,19 +201,31 @@ public class MatchManager : MonoBehaviour
         timerIsRunning = false;
         foreach (GameObject player in players)
 		{
-            PlayerCharacterController PCC = player.GetComponent<PlayerCharacterController>();
+            UpdatedCharacterController PCC = player.GetComponent<UpdatedCharacterController>();
             PCC.enabled = false;
 		}
-        PlayerIndex PI = players[0].GetComponent<PlayerIndex>();
-        timeText.text = "Game Over. Player " + PI.currentPlayerNo + " wins!";
-        Invoke("ReturnToLobbyAnim", 5f);
+        
+        if (playersDead == 0)
+        {
+            timeText.text = ("How did none of you die?!? We really need to keep working on this game.");
+        }
+        else if (playersDead > 0 && playersDead != 4)
+        {
+            PlayerIndex PI = players[0].GetComponent<PlayerIndex>();
+            timeText.text = "Game Over. Player " + PI.currentPlayerNo + " wins!";
+        }
+        else if (playersDead == 4)
+        {
+            timeText.text = ("Either you're good or bad. There is no inbetween.");
+        }
+        Invoke("LoadLobby", 5f);
 	}
 
     private void StartMatchCountdown(float secondsUntilStart)
 	{
-        timeText.text = matchStartTime.ToString("0");
-        matchStartTime -= Time.deltaTime;
-        if (matchStartTime <= 0)
+        timeText.text = secondsUntilStart.ToString("0");
+        secondsUntilStart -= Time.deltaTime;
+        if (secondsUntilStart <= 0)
 		{
             MatchStarting = false;
             timeText.text = "Begin!";
@@ -203,18 +236,18 @@ public class MatchManager : MonoBehaviour
 
     private void StartMatch()
 	{
+        ChangeMatchStatus(MatchStatus.IN_PROGRESS);
+        matchHasStarted = true;
         foreach (GameObject player in players)
 		{
             playersLeftAlive++;
 		}
-        ChangeMatchStatus(MatchStatus.IN_PROGRESS);
-        matchHasStarted = true;
         return;
 	}
 
     private void ReturnToLobbyAnim()
 	{
-        anim.Play("FadeToBlack");
+        //anim.Play("FadeToBlack");
         Invoke("LoadLobby", 5f);
         return;
 	}
@@ -230,6 +263,6 @@ public class MatchManager : MonoBehaviour
 	{
         MatchStarting = false;
         timerIsRunning = false;
-        matchStartTime = 0;
+        //matchStartTime = 0;
 	}
 }

@@ -67,10 +67,10 @@ MonoBehaviour:
   players: []
   playersLeftAlive: 0
   playersDead: 0
-  matchDurationInSeconds: 0
+  matchDurationInSeconds: 300
   timerIsRunning: 0
   MatchStarting: 0
-  matchStartTime: 0
+  matchStartTime: 5
   matchHasStarted: 0
   PlayersInLobby: 0
   timeText: {fileID: 0}
@@ -78,7 +78,6 @@ MonoBehaviour:
   PlayersDeadText: {fileID: 0}
   totalPlayersText: {fileID: 0}
   ReadyUpText: 
-  ReadyUpBox: {fileID: 0}
 --- !u!114 &-5012199437127610479
 MonoBehaviour:
   m_ObjectHideFlags: 0

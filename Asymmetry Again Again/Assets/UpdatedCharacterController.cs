@@ -255,6 +255,7 @@ public class UpdatedCharacterController : MonoBehaviour
 	{
         canPlayerRespawn = false;
         playerCam.parent = null;
+        matchManager.players.Remove(this.gameObject);
         StartCoroutine(DestroyPlayerBody());
 	}
 

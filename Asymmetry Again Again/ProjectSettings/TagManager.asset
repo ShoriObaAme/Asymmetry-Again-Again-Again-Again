@@ -9,6 +9,7 @@ TagManager:
   - Spawn Point
   - Ready Up Box
   - Knockback
+  - Killbounds
   layers:
   - Default
   - TransparentFX
