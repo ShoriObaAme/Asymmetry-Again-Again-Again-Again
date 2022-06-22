@@ -184,8 +184,8 @@ MonoBehaviour:
   gravityValue: 3
   movementSpeed: 3000
   MovementSpeedMultiplier: 1
-  Lives: 5
-  MaxLives: 5
+  Lives: 1
+  MaxLives: 1
   CurrentKnockbackVlaue: 0
   KnockBackValueDisplay: 0
   canPlayerRespawn: 1

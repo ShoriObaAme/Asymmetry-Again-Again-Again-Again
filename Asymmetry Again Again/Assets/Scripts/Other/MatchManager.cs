@@ -28,19 +28,16 @@ public class MatchManager : MonoBehaviour
     public int playersDead;
     [Header("Time")]
     [Tooltip("Enter match length in Seconds. For example, for a one minute match, enter 60. For a two minute match, enter 120, and so on and so forth.")]
-    public float matchDurationInSeconds;
+    public float matchDurationInSeconds = 180;
     public bool timerIsRunning = false;
     public bool MatchStarting = false;
-    public float matchStartTime;
+    public float matchStartTime = 5f;
     [SerializeField] private bool matchHasStarted = false;
     [SerializeField] private bool PlayersInLobby = false;
 
     [Header("Text")]
     public TextMeshProUGUI timeText;
-    public TextMeshProUGUI PlayersLeftAliveText;
-    public TextMeshProUGUI PlayersDeadText;
-    public TextMeshProUGUI totalPlayersText;
-    public string ReadyUpText;
+    public Canvas MultiplayerUI;
 
     [Header("Animation")]
     private Animator anim;
@@ -58,6 +55,9 @@ public class MatchManager : MonoBehaviour
 	private void OnEnable()
 	{
         ChangeMatchStatus(MatchStatus.NOT_STARTED);
+        MultiplayerUI.enabled = true;
+        SpawnPoints SP = GetComponent<SpawnPoints>();
+        SP.enabled = true;
 	}
 
 	private void OnDisable()
@@ -68,7 +68,7 @@ public class MatchManager : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-        timeText = GameObject.Find("Multiplayer Canvas").GetComponentInChildren<TextMeshProUGUI>();
+        //timeText = GameObject.Find("Multiplayer Canvas").GetComponentInChildren<TextMeshProUGUI>();
         timeText.text = "Press A to join.";
         foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
 		{
@@ -106,7 +106,7 @@ public class MatchManager : MonoBehaviour
 		{
             case MatchStatus.NOT_STARTED:
                 //LocateReadyUpBox();
-                //EndReadyUp();
+                EndReadyUp();
                 break;
             case MatchStatus.STARTING:
                 MatchStarting = true;
@@ -175,10 +175,10 @@ public class MatchManager : MonoBehaviour
 
     private void BeginMatch()
 	{
+        PIM.enabled = false;
         matchHasStarted = true;
         MatchStarting = false;
         timerIsRunning = true;
-        totalPlayersText.text = "Total Players: " + players.Count.ToString("0");
         GameObject.FindGameObjectWithTag("Ready Up Box").SetActive(false);
 	}
 
@@ -254,6 +254,7 @@ public class MatchManager : MonoBehaviour
 
     public void LoadLobby()
 	{
+        MultiplayerUI.enabled = false;
         gameManager.ChangeGameMode(Mode.MAIN_MENU);
         SceneManager.LoadScene("Map Select");
         return;
@@ -261,8 +262,6 @@ public class MatchManager : MonoBehaviour
 
     private void EndReadyUp()
 	{
-        MatchStarting = false;
-        timerIsRunning = false;
-        //matchStartTime = 0;
+        timeText = GameObject.FindGameObjectWithTag("Time Text").GetComponent<TextMeshProUGUI>();
 	}
 }

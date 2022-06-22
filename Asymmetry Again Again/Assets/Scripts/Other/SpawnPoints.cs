@@ -10,7 +10,7 @@ public class SpawnPoints : MonoBehaviour
     [SerializeField] private SpawnPointChosen chosen;
     public float timeUntilCancel;
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         SP = this;
         foreach (GameObject spawnPoint in GameObject.FindGameObjectsWithTag("Spawn Point"))

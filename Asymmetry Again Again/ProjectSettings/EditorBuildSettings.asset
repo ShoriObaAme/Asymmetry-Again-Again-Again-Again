@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mall/Mall.unity
     guid: 522085d688adda8498f344564ef4f441
+  - enabled: 1
+    path: Assets/Scenes/Testing Scene/Test Scene.unity
+    guid: eb12c5f20536c3943b1805e7500b19ce
   m_configObjects: {}

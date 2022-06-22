@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -87,12 +88,16 @@ Application.Quit();
 
 	void StartMultiplayer()
 	{
+		PlayerInputManager PIM = GetComponent<PlayerInputManager>();
+		PIM.enabled = true;
 		gameMode = Mode.MULTIPLAYER;
 		matchManager.enabled = true;
 	}
 
 	private void EndMultiplayer()
 	{
+		PlayerInputManager PIM = GetComponent<PlayerInputManager>();
+		PIM.enabled = false;
 		matchManager.enabled = false;
 		return;
 	}

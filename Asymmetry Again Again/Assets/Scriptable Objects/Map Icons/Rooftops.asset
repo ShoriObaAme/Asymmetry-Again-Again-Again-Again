@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cda7a8ae6fedb345b6dede209224a8e, type: 3}
   m_Name: Rooftops
   m_EditorClassIdentifier: 
-  LevelName: Rooftops
+  LevelName: Industrial
   SceneToLoad: Rooftops
-  LevelIcon: {fileID: 0}
+  LevelIcon: {fileID: 21300000, guid: dafd6243f19450447a5a9dab37868938, type: 3}

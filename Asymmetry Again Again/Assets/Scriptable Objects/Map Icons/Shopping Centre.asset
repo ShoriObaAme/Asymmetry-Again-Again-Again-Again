@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Shopping Centre
   m_EditorClassIdentifier: 
   LevelName: Mall
-  SceneToLoad: Mall
+  SceneToLoad: Test Scene
   LevelIcon: {fileID: 0}

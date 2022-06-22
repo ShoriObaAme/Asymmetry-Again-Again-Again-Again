@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PressStartToBegin : MonoBehaviour
+public class PressStartToBegin1 : MonoBehaviour
 {
 	[SerializeField] private GameManager gameManager;
 	public string SceneToLoad;

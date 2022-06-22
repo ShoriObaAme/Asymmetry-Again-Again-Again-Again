@@ -10,6 +10,7 @@ TagManager:
   - Ready Up Box
   - Knockback
   - Killbounds
+  - Time Text
   layers:
   - Default
   - TransparentFX
