@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMode: 5
-  matchManager: {fileID: 0}
-  PlayerToAdd: 0
+  matchManager: {fileID: 1404030015167032250}
+  PlayerToAdd: 1
 --- !u!114 &1404030015167032250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,8 +62,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   matchStatus: 0
-  gameManager: {fileID: 0}
-  PIM: {fileID: 0}
+  gameManager: {fileID: 1404030015167032252}
+  PIM: {fileID: 5070548258614695281}
   players: []
   playersLeftAlive: 0
   playersDead: 0

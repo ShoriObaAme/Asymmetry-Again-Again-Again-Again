@@ -1,4 +1,4 @@
-using UnityEngine;
+ using UnityEngine;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
@@ -45,8 +45,8 @@ public class MatchManager : MonoBehaviour
     [Header("Animation")]
     private Animator anim;
 
-    [Header("Readying Up")]
-    [SerializeField] private GameObject ReadyUpBox;
+    //[Header("Readying Up")]
+    //[SerializeField] private GameObject ReadyUpBox;
 
     public static event Action<MatchStatus> OnMatchStatusChange;
 
@@ -85,15 +85,19 @@ public class MatchManager : MonoBehaviour
 			{
                 timeText.text = "Press any button to join game.";
 			}
-            else if (players.Count >1 && players.Count != 4)
-			{
-                timeText.text = ReadyUpText;
-			}
-            else if (players.Count == 4)
-			{
-                timeText.text = "Please enter the designated area to begin the match.";
-			}
-		} 
+        }
+        /*if (players.Count > 1 && players.Count != 4)
+        {
+            timeText.text = ReadyUpText;
+        }
+        else if (players.Count == 4)
+        {
+            timeText.text = "Please enter the designated area to begin the match.";
+        }*/
+        if (players.Count >= 2)
+        {
+            ChangeMatchStatus(MatchStatus.STARTING);
+        }
     }
 
     // Update is called once per frame
@@ -168,7 +172,7 @@ public class MatchManager : MonoBehaviour
 
     private void LocateReadyUpBox()
 	{
-        ReadyUpBox = GameObject.FindGameObjectWithTag("Ready Up Box");
+     //   ReadyUpBox = GameObject.FindGameObjectWithTag("Ready Up Box");
 	}
 
     private void EndMatch()

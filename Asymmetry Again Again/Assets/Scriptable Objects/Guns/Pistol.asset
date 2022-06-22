@@ -20,7 +20,7 @@ MonoBehaviour:
   Damage: 150
   spread: 0
   range: 0
-  timeBetweenShots: 0.2
+  timeBetweenShots: 0.3
   ProjectilesPerShot: 1
   ReloadTime: 3
   timeBetweenCanShootAgain: 0
